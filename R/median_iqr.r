@@ -32,11 +32,11 @@ median_iqr<-function(dat,median.iqr.pars,dp,p1,p2,p3){
   options(pillar.sigfig=dp+2)
   if(median.iqr.pars%>%length==0) return(NULL)
   # dat := nested tibble
-  # mean.sd.pars := vector of parameter name needs mean,sd
+  # median.iqr.pars := vector of parameter name needs mean,sd
   cond<-dat%>%map(class)%>%lapply(., `%in%`,"list")%>%map(isTRUE)%>%map(isFALSE)
   map2(dat,cond,~{if(.y)  {
     summary<-.x%>%
-      select(!!mean.sd.pars)%>%
+      select(!!median.iqr.pars)%>%
       mutate_if(is.character,as.factor)%>%
       mutate_if(is.factor,as.numeric)%>%
       summarise(across(.cols=where(is.numeric),
@@ -55,7 +55,7 @@ median_iqr<-function(dat,median.iqr.pars,dp,p1,p2,p3){
       data.frame(summary.par.name,paste("Median",p1,"Q1",p2,"Q3",p3,sep=""),.)%>%
       set_names(c("Parameters","Statistics","Value"))
 
-  } else median_iqr(.x,mean.sd.pars,dp,p1,p2,p3)})
+  } else median_iqr(.x,median.iqr.pars,dp,p1,p2,p3)})
 }
 
 median_iqr_format<-function(m,p1,p2,p3){
