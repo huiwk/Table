@@ -36,7 +36,7 @@ count_pct<-function(dat,count.pct.pars,dp,p1,p2){
   cond<-dat%>%map(class)%>%lapply(., `%in%`,"list")%>%map(isTRUE)%>%map(isFALSE)
   map2(dat,cond,~{if(.y)  {
     dat.as.factor<-.x%>%
-      select(c(!!count.pct.pars,-matches(!!group_var)))%>%
+      select(c(!!count.pct.pars))%>%
       mutate(across(.cols=everything(),as.factor))
     
     summary<-count_pct_diff.levels(dat.as.factor)
