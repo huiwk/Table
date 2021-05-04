@@ -114,7 +114,7 @@ Table1(dat,par,All_group,By_group,group_var,
        missing.pct.dp = 2, missing.pct.p1 = ",", missing.pct.p2 = "%")
 ```
 
-
+ https://huiiiiiii1155063467.shinyapps.io/Fart2/
 
 
 
