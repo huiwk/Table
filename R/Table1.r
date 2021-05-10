@@ -98,5 +98,5 @@ Table1.format<-function(tab,par,detail=FALSE){
     arrange(Order)%>%
     select(which(sapply(., is.character)))
   t[,"Parameter.name.to.display"]<-ifelse(grepl("Missing",t[,"Statistics"]),t[,"Statistics"],t[,"Parameter.name.to.display"])
-  {ifelse(!detail,t%>%select(-c("Parameters","Statistics")),t)}  
+  if(!detail) t%>%select(-c("Parameters","Statistics")) else t
 }
