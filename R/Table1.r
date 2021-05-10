@@ -73,7 +73,7 @@ Table1<-function(dat,pars,All_group,By_group,group_var=NULL,#data.split
                  mean.sd.dp,mean.sd.p1,mean.sd.p2,#mean_sd
                  median.iqr.dp,median.iqr.p1,median.iqr.p2,median.iqr.p3,#median_iqr
                  count.pct.dp,count.pct.p1,count.pct.p2,#count_pct
-                 missing.pct.dp,missing.pct.p1,missing.pct.p2 #missing_pct,
+                 missing.pct.dp,missing.pct.p1,missing.pct.p2, #missing_pct
                  detail=FALSE
 ){
   d<-data.split(dat,par.name,All_group,By_group,group_var,1)
