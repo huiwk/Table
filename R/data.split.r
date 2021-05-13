@@ -55,6 +55,8 @@ data.split<-function(dat,pars,All_group,By_group,group_var=NULL,unnest=FALSE){
   if(unnest){
     unnested.d<-map(d,.%>%unnest(everything()))
     is.by.group<-map(unnested.d%>%map(.,names),~{match(.,group_var)%>%sum(na.rm = TRUE)%>%max})
-    map2(unnested.d,is.by.group,~{if(.y) group_split(.x,.x[,group_var])%>%map(tibble)%>%set_names(outer(group_var,d[[1]][,1]%>%unlist,paste)) else .x})
+    if(!All_group){
+    map2(unnested.d,is.by.group,~{if(.y) group_split(.x,.x[,group_var])%>%map(tibble)%>%set_names(outer(group_var,d[[1]][,1]%>%unlist,paste)) else .x})}else{
+      map2(unnested.d,is.by.group,~{if(.y) group_split(.x,.x[,group_var])%>%map(tibble)%>%set_names(outer(group_var,d[[2]][,1]%>%unlist,paste)) else .x})}
   }else return(d)
 }
