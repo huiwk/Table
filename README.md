@@ -1,7 +1,5 @@
-# Tablr
+# Table
 R package for Table1 
-
-<h2>This Tablr Vignette will introduce all function in the Tablr package.</h2> 
 
 <h3><b>Required library:</b></h3>
 1. devtools - for installing Tablr
@@ -113,18 +111,6 @@ Table1(dat,par,All_group,By_group,group_var,
        count.pct.dp = 2, count.pct.p1 = "(", count.pct.p2 = ")",
        missing.pct.dp = 2, missing.pct.p1 = ",", missing.pct.p2 = "%")
 ```
-
- https://huiiiiiii1155063467.shinyapps.io/Fart2/
-
-
-
-
-
-
-
-
-
-
 
 
 
