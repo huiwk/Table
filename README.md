@@ -2,7 +2,7 @@
 R package for Table1 
 
 <h3><b>Required library:</b></h3>
-1. devtools - for installing Tablr
+1. devtools - for installing Table
 2. survival - sample dataset mgus
 3. dplyr - piping
 
