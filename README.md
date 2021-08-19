@@ -19,8 +19,8 @@ install.packages("survival")
 library(devtools)
 library(survival)
 library(dplyr)
-install_github("huiwk/Tablr")
-library(Tablr)
+install_github("huiwk/Table")
+library(Table)
 set.seed(63467)
 ```
 
